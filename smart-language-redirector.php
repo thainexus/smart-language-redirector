@@ -101,7 +101,7 @@ function slr_redirect_based_on_language() {
     $enabled = get_option('slr_enabled', 1);
     if (!$enabled) return;
 
-    $request_uri = $_SERVER['REQUEST_URI'] ?? '';
+    $request_uri = isset($_SERVER['REQUEST_URI']) ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])) : '';
     $root_lang = get_option('slr_root_lang', 'th');
     $cookie_lifetime = (int) get_option('slr_cookie_lifetime', 60);
     $supported = explode(',', str_replace(' ', '', get_option('slr_supported_languages', 'en,th')));
@@ -109,7 +109,7 @@ function slr_redirect_based_on_language() {
     if (!empty($_COOKIE['lang_redirected'])) return;
     if ($request_uri !== '/' && $request_uri !== '/index.php') return;
 
-    $accept = $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '';
+    $accept = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? sanitize_text_field(wp_unslash($_SERVER['HTTP_ACCEPT_LANGUAGE'])) : '';
     $browser_lang = substr($accept, 0, 2);
 
     if (in_array($browser_lang, $supported) && $browser_lang !== $root_lang) {
