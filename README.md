@@ -1,69 +1,48 @@
 # 🌐 Smart Language Redirector
 
-> A lightweight plugin that detects a visitor's browser language and redirects them to the right translated version of your WordPress site. Built for performance and compatibility — by [Thai Nexus](https://thainexus.co.th/wordpress-plugins/smart-language-redirector).
+A lightweight WordPress plugin that automatically redirects first-time visitors to their preferred language version of your site based on browser settings. Compatible with TranslatePress, WPML, Polylang, and even custom setups.
 
 ---
 
-## 🔥 Features
+### 🚀 Features
 
-- ✅ Redirects users to `/en/`, `/fr/`, etc. based on browser language
-- ✅ Root language support (e.g., Thai at `/`, others as subdirs)
-- ✅ Sets cookie to remember language preference
-- ✅ Admin panel with toggle, language list, and live test tool
-- ✅ Works with TranslatePress, WPML, Polylang, or manual translation
-- ✅ Built with speed and safety — no conflict with cache plugins
-
----
-
-## 📦 Installation
-
-1. Download the latest release `.zip`
-2. Go to your WordPress Admin → Plugins → Add New → Upload
-3. Activate the plugin
-4. Go to **Settings → Language Redirector**
-5. Set your root language (e.g., `th`) and supported list (`en,fr,de`)
+- ✅ Detects browser language
+- ✅ Redirects once using a cookie (no annoying loops)
+- ✅ Compatible with all major translation plugins
+- ✅ Works even with manual folder setups (e.g., `/en/`, `/fr/`)
+- ✅ Admin panel with settings and test tool
+- ✅ Developed by [Thai Nexus](https://thainexus.co.th/wordpress-plugins/smart-language-redirector)
 
 ---
 
-## 🧪 Test It
+### 🔧 Example Use Case
 
-Use the live preview panel inside the plugin admin to:
-
-- Detect your browser language
-- Simulate first-visit behavior
-- View debug logs (if enabled)
+If your default homepage is in Thai (`/`) and your translated English version is at `/en/`, a visitor with English browser settings will be redirected to `/en/` only once.
 
 ---
 
-## 💡 Use Cases
+### 🛠️ Installation
 
-- Thai/English websites with Thai at root (`/`) and English at `/en/`
-- Multilingual ecommerce sites needing a first-visit redirect
-- Sites using TranslatePress with expensive redirect addon alternatives
-
----
-
-## 🙋 About Thai Nexus
-
-**Thai Nexus** helps international teams operate legally and effectively in Thailand. We provide:
-
-- 🏢 Virtual business addresses & mail forwarding
-- 🛂 Visa support (retirement, education, marriage, business)
-- 🚚 Ecommerce logistics & export prep
-
-👉 [Learn more](https://thainexus.co.th)
+1. Upload the plugin folder to `wp-content/plugins/` or use **Plugins → Add New → Upload**
+2. Activate the plugin
+3. Go to **Settings → Language Redirector**
+4. Choose your root language and supported ones (`en,fr,de,pl`)
+5. Save and test using the built-in browser language test tool
 
 ---
 
-## 📄 License
+### 💡 About Thai Nexus
 
-Released under the [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html).
+**Thai Nexus** helps international teams build real business operations in Thailand:
+
+- Business & virtual address rental
+- Study, retirement, marriage, and work visa services
+- Mail forwarding and ecommerce shipping from Thailand
+
+[🔗 Learn more](https://thainexus.co.th)
 
 ---
 
-## 🧠 Contribute
+### 📜 License
 
-PRs welcome! Use issues to suggest features or report bugs.
-
-Official landing page:  
-👉 [thainexus.co.th/wordpress-plugins/smart-language-redirector](https://thainexus.co.th/wordpress-plugins/smart-language-redirector)
+This plugin is licensed under the [GNU GPL v2 or later](https://www.gnu.org/licenses/gpl-2.0.html).
