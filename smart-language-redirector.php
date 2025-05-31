@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Smart Language Redirector
- * Description: Redirects first-time visitors based on browser language. Cookie prevents repeated redirects. Compatible with any translation plugin.
- * Version: 1.0
+ * Description: Automatically redirect visitors to their preferred language version of your site based on browser settings. Works with TranslatePress, WPML, or any custom setup.
+ * Version: 1.0.1
  * Author: Thai Nexus
  * Plugin URI: https://thainexus.co.th/wordpress-plugins/smart-language-redirector
  * Author URI: https://thainexus.co.th
