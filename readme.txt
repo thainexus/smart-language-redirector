@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
-Automatically redirect visitors to their preferred language version of your site based on browser settings. Works with TranslatePress, WPML, or any custom setup.
+Redirect visitors to their preferred language version based on browser settings. Works with any translation plugin.
 
 == Description ==
 
