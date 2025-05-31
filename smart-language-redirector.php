@@ -35,16 +35,63 @@ add_action('admin_menu', 'slr_add_admin_menu');
 function slr_settings_page() {
     $saved_langs = get_option('slr_supported_languages', 'en,th');
     ?>
+    <style>
+        .wrap h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #0073aa;
+        }
+        .wrap p {
+            font-size: 14px;
+            color: #333;
+        }
+        .form-table th {
+            width: 240px;
+        }
+        .form-table input[type="text"],
+        .form-table input[type="number"] {
+            width: 300px;
+            padding: 6px;
+        }
+        .slr-box {
+            background: #fefefe;
+            padding: 20px;
+            border: 1px solid #ccd0d4;
+            border-left: 5px solid #0073aa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .slr-tip {
+            background: #fffbe5;
+            padding: 20px;
+            border: 1px solid #ffe58f;
+            border-left: 5px solid #f1c40f;
+            margin-top: 30px;
+        }
+        .slr-tip h2 {
+            margin-top: 0;
+        }
+        .button-primary {
+            background-color: #0073aa;
+            border-color: #0073aa;
+        }
+        .button-primary:hover {
+            background-color: #006799;
+            border-color: #005177;
+        }
+    </style>
     <div class="wrap">
         <h1>🌐 Smart Language Redirector</h1>
         <p><strong>Thai Nexus</strong> plugin for redirecting visitors to their preferred language version of your site based on browser settings.</p>
 
-        <div style="background: #f1f1f1; padding: 15px; border-left: 4px solid #0073aa; margin-bottom: 20px;">
-            <strong>📌 How to Use</strong><br>
-            - Automatically redirect first-time visitors from <code>/</code> to their browser language.<br>
-            - Supports any translation plugin, including TranslatePress.<br>
-            - Set the root language — your homepage without a subdirectory.<br>
-            - Cookie prevents future redirects. Supports <code>en, th, fr, de, pl</code>, etc.
+        <div class="slr-box">
+            <h2>📌 How to Use</h2>
+            <p>
+                - Automatically redirect first-time visitors from <code>/</code> to their browser language.<br>
+                - Supports any translation plugin, including TranslatePress.<br>
+                - Set the root language — your homepage without a subdirectory.<br>
+                - Cookie prevents future redirects. Supports <code>en,th,fr,de,pl</code>, etc.
+            </p>
         </div>
 
         <form method="post" action="options.php">
@@ -67,30 +114,32 @@ function slr_settings_page() {
                     <th scope="row">Supported Languages</th>
                     <td>
                         <input type="text" name="slr_supported_languages" value="<?php echo esc_attr($saved_langs); ?>" />
-                        <p class="description">Comma-separated list (e.g., <code>en,th,fr,pl,de</code>)</p>
+                        <p class="description">Comma-separated list (e.g., <code>en,th,fr,de,pl</code>)</p>
                     </td>
                 </tr>
             </table>
             <?php submit_button(); ?>
         </form>
 
-        <hr>
-        <h2>Test Tool</h2>
-        <p>Your browser language is: <strong><span id="slr-browser-lang"></span></strong></p>
-        <script>
-            document.getElementById('slr-browser-lang').innerText = navigator.language || navigator.userLanguage;
-        </script>
+        <div class="slr-box">
+            <h2>🧪 Test Tool</h2>
+            <p>Your browser language is: <strong><span id="slr-browser-lang"></span></strong></p>
+            <script>
+                document.getElementById('slr-browser-lang').innerText = navigator.language || navigator.userLanguage;
+            </script>
+        </div>
 
-        <hr>
-        <h2>💡 Thai Nexus Tip</h2>
-        <p style="font-size: 16px; max-width: 600px;">
-            Looking for a reliable business address in Thailand — or planning to live here long-term?<br><br>
-            <strong>Thai Nexus</strong> offers:<br>
-            - Study, retirement, marriage, or work visa support<br>
-            - Virtual business or private addresses<br>
-            - International mail forwarding and ecommerce shipping from Thailand<br><br>
-            <a href="https://thainexus.co.th" target="_blank" class="button button-primary">Visit Thai Nexus</a>
-        </p>
+        <div class="slr-tip">
+            <h2>💡 Thai Nexus Tip</h2>
+            <p>
+                Looking for a reliable business address in Thailand — or planning to live here long-term?<br><br>
+                <strong>Thai Nexus</strong> offers:<br>
+                - Study, retirement, marriage, or work visa support<br>
+                - Virtual business or private addresses<br>
+                - International mail forwarding and ecommerce shipping from Thailand<br><br>
+                <a href="https://thainexus.co.th" target="_blank" class="button button-primary">Visit Thai Nexus</a>
+            </p>
+        </div>
     </div>
     <?php
 }
